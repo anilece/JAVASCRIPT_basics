@@ -115,9 +115,13 @@ var watchList = [
 function getRating(watchList){
   // Only change code below this line
   var filtr = watchList.filter((user)=>((user["Director"]==="Christopher Nolan")));
+  var c=1;
+  var s=0;
   var averageRating = filtr.reduce((avg=0,user)=>{
     console.log(avg)
-    return avg += parseInt(user["imdbRating"],10);
+    c+=1;
+    s += parseFloat(user["imdbRating"],10);
+    return(s/(c-1));
     },0
   );
 
